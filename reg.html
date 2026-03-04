@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body{
+            background-color: rgb(150, 156, 156) ;
+        }
+        .box{
+            height: 480px;
+            width: 300px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: rgb(130, 139, 139);
+        }
+        .bb{
+            margin-left: -280px;
+        }
+    </style>
+</head>
+<body>
+    
+        <h1 style="text-align: center;">Registration</h1>
+     <center>
+            
+        <div class="box">
+            <a href="#" style="color: rgb(25, 5, 99);" onclick="ih()" class="bb" ><</a>
+
+            <h2 style="text-align: center;">New User</h2><br>
+            
+            <label>Name:     </label>
+            <input type="text" placeholder="Enter your name" id="n"><br>
+            <br>
+            <label>Last name:</label>
+            <input type="text" placeholder="Enter your last name" id="ln"><br>
+            <br>
+            <label>Email:</label>
+            <input type="email" placeholder="Enter your email" id="em"><br>
+            <br>
+            <label>Phone Number:</label>
+            <input type="tel" placeholder="Enter your number" minlength="10" maxlength="10" id="pn"><br>
+            <br>
+            <label>Gender:</label>
+            <label><input type="radio" name="Gender" value="Male" placeholder="Enter ur gender" id="m">Male</label>
+            <label>
+            <input type="radio" name="Gender" value="Female" placeholder="Enter ur gender" id="f">Female</label><br>
+            <br>
+            <label>age:</label>
+            <input type="number" placeholder="Enter your age" min="1" max="100" id="a" style="width: 110px;"><br>
+            <br>
+            <label>password</label>
+            <input type="password" min="8" max="" pattern="(.?=*(a-z))" id="p"><br>
+            <br>
+            <button onclick="su()">Sign Up</button> 
+            <p>if you already have a account</p>
+            <a href="#" onclick="rsi()">Sign in</a>
+
+        </div>
+        <script>
+            function su(){
+                let name=document.getElementById("n").value;
+                let last=document.getElementById("ln").value;
+                let email=document.getElementById("em").value;
+                let phone=document.getElementById("pn").value;
+                let male=document.getElementById("m").value;
+                let fa=document.getElementById("f").value;
+                let age=document.getElementById("a").value;
+                let pass=document.getElementById("p").value;
+
+                if(name==""||last==""||email==""||phone==""||male==""||fa==""||age==""||pass==""){
+                    alert("please fill all field");
+                    return;
+                }
+                
+                window.location.href="lg.html";
+            }
+            function rsi(){
+                window.location.href="lg.html";
+            }
+            function ih(){
+        window.location.href="index.html";
+    }
+        </script>
+    </center>
+</body>
+</html>

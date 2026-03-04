@@ -9,11 +9,14 @@
             background-image: url(https://img.freepik.com/free-photo/arrangement-black-friday-shopping-carts-with-copy-space_23-2148667047.jpg);
             background-repeat: no-repeat;
             background-size: cover;
+            margin: o;
+            padding: 0;
         }
         .box{
             height: 300px;
             width: 300px;
             border: 1px solid white;
+            animation: popln 2s ease forwards;
         }
         img{
             border: 2px solid black;
@@ -24,6 +27,10 @@
         }
         .bb{
             margin-right: 330px;
+        }
+        @keyframes popln{
+            from{opacity: 0; transform: scale(2);}
+            to{opacity: 1; transform: scale(1);}
         }
     </style>
 </head>

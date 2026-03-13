@@ -13,6 +13,7 @@
             width: 300px;
             border: 2px solid black;
             text-align: center;
+            border-radius: 10px;
             background-color: rgb(130, 139, 139);
         }
         .bb{
@@ -37,7 +38,7 @@
             <input type="text" placeholder="Enter your last name" id="ln"><br>
             <br>
             <label>Email:</label>
-            <input type="email" placeholder="Enter your email" id="em"><br>
+            <input type="email" placeholder="Enter your email" id="e"><br>
             <br>
             <label>Phone Number:</label>
             <input type="tel" placeholder="Enter your number" minlength="10" maxlength="10" id="pn"><br>
@@ -48,12 +49,12 @@
             <input type="radio" name="Gender" value="Female" placeholder="Enter ur gender" id="f">Female</label><br>
             <br>
             <label>age:</label>
-            <input type="number" placeholder="Enter your age" min="1" max="100" id="a" style="width: 110px;"><br>
+            <input type="number" pattern="[0-9]" placeholder="Enter your age" min="1" max="100" required id="a" style="width: 110px;"><br>
             <br>
             <label>password</label>
             <input type="password" min="8" max="" pattern="(.?=*(a-z))" id="p"><br>
             <br>
-            <button onclick="su()">Sign Up</button> 
+            <button onclick="su()">Register</button> 
             <p>if you already have a account</p>
             <a href="#" onclick="rsi()">Sign in</a>
 
@@ -62,7 +63,7 @@
             function su(){
                 let name=document.getElementById("n").value;
                 let last=document.getElementById("ln").value;
-                let email=document.getElementById("em").value;
+                let email=document.getElementById("e").value;
                 let phone=document.getElementById("pn").value;
                 let male=document.getElementById("m").value;
                 let fa=document.getElementById("f").value;
@@ -71,6 +72,18 @@
 
                 if(name==""||last==""||email==""||phone==""||male==""||fa==""||age==""||pass==""){
                     alert("please fill all field");
+                    return;
+                }
+                else if(phone.length<10||phone.length>10){
+                    alert("please enter 10 digits ! plz valid number");
+                    return;
+                }
+                else if(isNaN(phone)){
+                    alert("only number are allowed ! plz valid number");
+                    return ;
+                }
+                else if(age<1||age>100){
+                    alert("enter valid age")
                     return;
                 }
                 
